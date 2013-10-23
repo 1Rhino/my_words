@@ -15,13 +15,16 @@
 //= require turbolinks
 //= require_tree .
 
-bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-
-$(document).ready(function(){
-  $("#word_search").submit(function(){
-    alert("aaaa");
-    return false;
-  })
+  $(document).ready(function(){
+    $('#autocomplete').autocomplete({
+      lookup: [],
+      onHint: function (hint) {
+          $('#autocomplete-x').val(hint);
+      },
+  });
+    // $.post("/search", $(this).serialize(), function(data){
+    //   word_data = data
+    // })
 
   $("#word_add").submit(function(){
     $.post("/add", $(this).serialize(), function(data){
