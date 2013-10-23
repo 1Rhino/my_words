@@ -24,7 +24,9 @@ $(document).ready(function(){
   })
 
   $("#word_add").submit(function(){
-    alert("bbb");
+    $.post("/add", $(this).serialize(), function(data){
+      alert(data);
+    });
     return false;
   })
 })
