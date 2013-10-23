@@ -1,6 +1,13 @@
-.container
-  form#word_search
-    .input-group
-      input.word.form-control
-      button Go
+div class="container"
 
+  div class="form-search"
+    form id="word_search" class="" role="form"
+      input type="text" class="form-control word" placeholder="Search..." name="word"
+
+  div class="form-add"
+    form id="word_add" class="form-inline" role="form"
+      div class="form-group"
+        input type="text" class="form-control" placeholder="Word..." name="word"
+      div class="form-group"
+        input type="text" class="form-control" placeholder="Translate..." name="translate"
+      button type="submit" class="btn btn-primary" Add

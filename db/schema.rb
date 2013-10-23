@@ -13,24 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20131023022929) do
 
-  create_table "translations", force: true do |t|
-    t.string   "translation",              null: false
-    t.integer  "like_counter", default: 0
-    t.integer  "word_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "translations", ["like_counter"], name: "like_counter"
-  add_index "translations", ["translation"], name: "translation"
-
   create_table "words", force: true do |t|
     t.string   "word",                     null: false
+    t.string   "translation",              null: false
     t.integer  "view_counter", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "words", ["translation"], name: "translation"
   add_index "words", ["view_counter"], name: "view_counter"
   add_index "words", ["word"], name: "word", unique: true
 

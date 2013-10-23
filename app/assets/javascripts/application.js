@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+
+$(document).ready(function(){
+  $("#word_search").submit(function(){
+    alert("aaaa");
+    return false;
+  })
+
+  $("#word_add").submit(function(){
+    alert("bbb");
+    return false;
+  })
+})
