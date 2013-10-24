@@ -4,6 +4,9 @@ MyWords::Application.routes.draw do
   post "update" => "home#update"
   post "search" => "home#search"
   post "get_detail" => "home#get_detail"
+  post "new_words" => "home#new_words"
+  post "popular_words" => "home#popular_words"
+  get "all_words" => "home#all_words"
 
   root "home#index"
   # The priority is based upon order of creation: first created -> highest priority.

@@ -17,6 +17,8 @@
 
 $(document).ready(function(){
 
+  $("#autocomplete").focus();
+
   $('#autocomplete').autocomplete({
     lookup: [],
     onHint: function (hint) {
@@ -37,11 +39,12 @@ $(document).ready(function(){
         $(".form-update .update-word").val(data.value);
         $(".form-update .update-translation").val(data.data);
         $(".form-update .update-id").val(data.id);
+        get_popular_words();
       }else{
         var word_search = $("#word_search .word").val();
         $(".word-detail").hide();
-        $(".form-add").show();
-        $("#alert_box").removeClass().addClass("alert alert-warning").html("Not found in diction. Please add!").css("display", "inline-block");
+        $(".form-add").css("display", "inline-block");
+        // $("#alert_box").removeClass().addClass("alert alert-warning").html("Not found in diction. Please add!").css("display", "inline-block");
         $(".form-add .add-word").val(word_search);
         $(".form-add .add-translation").val("").focus();
       };
@@ -55,6 +58,7 @@ $(document).ready(function(){
         $("#alert_box").removeClass().addClass("alert alert-success").html("Added successful!").css("display", "inline-block");
         $(".form-add").hide();
         $(".form-search .word").focus();
+        get_new_word();
       }else{
         $("#alert_box").removeClass().addClass("alert alert-danger").html("Added failed!").show();
       }
@@ -67,6 +71,8 @@ $(document).ready(function(){
       if( data == "true"){
         $(".form-update").hide();
         $("#word_search").submit();
+        get_new_word();
+        get_popular_words();
       }else{
         $("#alert_box").removeClass().addClass("alert alert-danger").html("Updated failed!").show();
       }
@@ -80,3 +86,18 @@ $(document).ready(function(){
     return false;
   })
 })
+
+// list functions
+
+function get_new_word(){
+  $.post("new_words", function(data){
+    $(".new_words").html(data);
+  })
+}
+
+function get_popular_words(){
+  $.post("popular_words", function(data){
+    $(".popular_words").html(data);
+  })
+}
+

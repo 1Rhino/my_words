@@ -33,16 +33,14 @@ group :doc do
 end
 
 group :development do
-  gem "pry"
   gem "thin"
   gem "better_errors"
-  gem 'rack-mini-profiler'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
 
 gem "slim-rails"
-
+gem "will_paginate"
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 

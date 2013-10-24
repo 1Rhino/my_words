@@ -6,9 +6,8 @@ body{
 }
 
 #word_search .word {
-  width: 400px;
+  width: 456px;
   height: 40px;
-  margin-right: 10px;
 }
 .form-search {
   margin-top: 100px;
@@ -18,15 +17,22 @@ body{
   width: 80px;
 }
 .form-add {
-  margin-top: 30px;
+  width: 456px;
+  margin-top: 5px;
   display: none;
 }
 
-.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestions {
+  border: 1px solid #999; background: #FFF; overflow: auto;
+  margin-right: -7px;
+}
 .autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
 .autocomplete-selected { background: #F0F0F0; }
 .autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
 
+.word-detail {
+  margin-top: 5px;
+}
 .word-detail .word {
   width: 150px;
 }
@@ -39,4 +45,19 @@ body{
 }
 .form-update {
   display: none;
+}
+.box-words {
+  margin-top: 40px;
+}
+.words_list li {
+  list-style: none;
+}
+.words_list .word {
+  width: 150px;
+  display: inline-block;
+}
+.words_list > li {
+  border-bottom: 1px solid #DDDDDD;
+  height: 30px;
+  line-height: 30px;
 }
