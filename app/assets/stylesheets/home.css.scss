@@ -19,9 +19,24 @@ body{
 }
 .form-add {
   margin-top: 30px;
+  display: none;
 }
 
 .autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
 .autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
 .autocomplete-selected { background: #F0F0F0; }
 .autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+
+.word-detail .word {
+  width: 150px;
+}
+
+.word-detail .translation {
+  width: 250px;
+}
+.alert {
+  display: none;
+}
+.form-update {
+  display: none;
+}

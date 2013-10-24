@@ -1,7 +1,9 @@
 MyWords::Application.routes.draw do
   get "home/index"
   post "add" => "home#create"
+  post "update" => "home#update"
   post "search" => "home#search"
+  post "get_detail" => "home#get_detail"
 
   root "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
