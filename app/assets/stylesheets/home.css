@@ -1,9 +1,16 @@
+.top-logo {
+  margin: 30px auto 0;
+  max-width: 500px;
+}
+.top-logo img{
+  margin-left: 65px;
+}
 #word_search .word {
   height: 40px;
 }
 .form-search {
   width: 500px;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 .form-search button {
   height: 40px;
