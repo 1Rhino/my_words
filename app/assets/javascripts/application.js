@@ -43,6 +43,7 @@ $(document).ready(function(){
       }else{
         var word_search = $("#word_search .word").val();
         $(".word-detail").hide();
+        $("#alert_box").hide();
         $(".form-add").css("display", "inline-block");
         // $("#alert_box").removeClass().addClass("alert alert-warning").html("Not found in diction. Please add!").css("display", "inline-block");
         $(".form-add .add-word").val(word_search);
@@ -60,7 +61,7 @@ $(document).ready(function(){
         $(".form-search .word").focus();
         get_new_word();
       }else{
-        $("#alert_box").removeClass().addClass("alert alert-danger").html("Added failed!").show();
+        $("#alert_box").removeClass().addClass("alert alert-danger").html("Added failed!").css("display", "inline-block");
       }
     });
     return false;
@@ -74,7 +75,7 @@ $(document).ready(function(){
         get_new_word();
         get_popular_words();
       }else{
-        $("#alert_box").removeClass().addClass("alert alert-danger").html("Updated failed!").show();
+        $("#alert_box").removeClass().addClass("alert alert-danger").html("Updated failed!").css("display", "inline-block");
       }
     });
     return false;

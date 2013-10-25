@@ -1,0 +1,27 @@
+div class="box-search"
+  div class="form-search"
+    form id="word_search" class="" role="form"
+      input id="autocomplete"type="text" class="form-control word" placeholder="Find or add words..." name="word"
+
+  div class="word-detail alert alert-success"
+    span class="word"
+    span class="translation"
+    a href="#" class="edit-word" Edit
+    div class="form-update"
+      form id="word_update" class="form-inline" role="form"
+        div class="form-group"
+          input type="text" class="form-control update-word" placeholder="Word..." name="word[word]"
+        div class="form-group"
+          input type="text" class="form-control update-translation" placeholder="Translate..." name="word[translation]"
+        input type="hidden" class="update-id" name="word[id]"
+        button type="submit" class="btn btn-primary" Update
+
+  div class="form-add alert alert-info"
+    form id="word_add" class="form-inline" role="form"
+      div class="form-group"
+        input type="text" class="form-control add-word" placeholder="Word..." name="word[word]"
+      div class="form-group"
+        input type="text" class="form-control add-translation" placeholder="Translate..." name="word[translation]"
+      button type="submit" class="btn btn-primary" Add
+
+  div id="alert_box"

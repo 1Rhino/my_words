@@ -1,7 +1,14 @@
 div class="container"
-  ul class="words_list"
-    - @all_words.each do |word|
-      li
-        span class="word" = word.word
-        span class="translation" = word.translation
-  = will_paginate @all_words
+
+  = render "box_search"
+
+  div class="box-words"
+    div class="total-words"
+      span class="label label-primary" = @total.to_s + " words"
+    div class="words_list"
+      - @all_words.each do |word|
+        li
+          span class="word" = word.word
+          span class="translation" = word.translation
+
+    = will_paginate @all_words

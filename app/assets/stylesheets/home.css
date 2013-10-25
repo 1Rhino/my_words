@@ -1,8 +1,8 @@
 #word_search .word {
-  width: 456px;
   height: 40px;
 }
 .form-search {
+  width: 500px;
   margin-top: 100px;
 }
 .form-search button {
@@ -10,11 +10,22 @@
   width: 80px;
 }
 .form-add {
-  width: 456px;
+  width: 500px;
   margin-top: 5px;
   display: none;
 }
 
+.word-detail {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  width:500px;
+}
+.alert{
+  width:500px;
+}
+#alert_box{
+  margin-top: 5px;
+}
 .autocomplete-suggestions {
   border: 1px solid #999; background: #FFF; overflow: auto;
   margin-right: -7px;
@@ -23,21 +34,27 @@
 .autocomplete-selected { background: #F0F0F0; }
 .autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
 
-.word-detail {
-  margin-top: 5px;
-}
 .word-detail .word {
-  width: 150px;
+  vertical-align: middle;
+  width: 45%;
+  display:inline-block;
 }
 
 .word-detail .translation {
-  width: 250px;
+  vertical-align: middle;
+  width: 45%;
+  display:inline-block;
 }
 .alert {
   display: none;
 }
 .form-update {
+  width: 500px;
+  margin-top: 3px;
   display: none;
+}
+.form-group{
+  margin-right:3px;
 }
 .box-words {
   margin-top: 40px;
@@ -46,11 +63,44 @@
   list-style: none;
 }
 .words_list .word {
-  width: 150px;
+  vertical-align: middle;
+  width: 250px;
+  display: inline-block;
+}
+.words_list .translation {
+  vertical-align: middle;
+  max-width: 275px;
   display: inline-block;
 }
 .words_list > li {
   border-bottom: 1px solid #DDDDDD;
-  height: 30px;
-  line-height: 30px;
+  padding: 6px;
+}
+.box-search {
+  margin: 0 auto;
+  padding: inherit;
+  max-width: 500px;
+}
+.label-list{
+  margin-bottom:10px;
+}
+
+.label-list span, .total-words span{
+  font-size: 13px;
+  padding: 3px 10px;
+}
+.total-words {
+  text-align:center;
+  margin-bottom: 15px;
+}
+
+.all-words {
+  margin-top: 25px;
+  text-align: center;
+}
+.box-words{
+  margin: 0 auto;
+  padding: inherit;
+  max-width: 600px;
+  margin-top: 30px;
 }
