@@ -14,15 +14,17 @@ class Word < ActiveRecord::Base
   end
 
   def self.search_word(params)
-    param_search = params["word"].squish.downcase
-    words = Word.where("word like ?","%#{param_search}%").order("view_counter DESC").limit(10)
+    param_search = params["word"].squish
+    param_search_downcase = params["word"].squish.downcase
+    words = Word.where("word like ? OR word like ?","%#{param_search}%", "%#{param_search_downcase}%").order("view_counter DESC").limit(10)
     words = words.map{ |word| { "value" => word.word, "data" => word.translation } }
     return words
   end
 
   def self.get_detail_word(params)
     param_search = params["word"].squish
-    word = Word.where(word: param_search).first
+    param_search_downcase = params["word"].squish.downcase
+    word = Word.where("word = ? OR word = ?", param_search, param_search_downcase).first
     if word.blank?
       return nil
     else
