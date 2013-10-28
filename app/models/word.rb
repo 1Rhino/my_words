@@ -8,9 +8,9 @@ class Word < ActiveRecord::Base
     word = Word.new(param_word)
     word.word = word.word.squish.downcase
     word.translation = word.translation.squish.downcase
-    return "false" unless word.valid?
+    return nil unless word.valid?
     word.save
-    return "true"
+    return {"value" =>  word.word, "data" => word.translation}
   end
 
   def self.search_word(params)

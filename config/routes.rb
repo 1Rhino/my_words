@@ -6,6 +6,7 @@ MyWords::Application.routes.draw do
   post "get_detail" => "home#get_detail"
   post "new_words" => "home#new_words"
   post "popular_words" => "home#popular_words"
+  post "get_words" => "home#get_words"
   get "all_words" => "home#all_words"
 
   root "home#index"

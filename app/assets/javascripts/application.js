@@ -17,14 +17,21 @@
 
 $(document).ready(function(){
 
+  // all_words in database. Will use in other function when create, update data
+  var all_words = [];
+
+  $.post('/get_words', function(data){
+    all_words = data;
+    $('#autocomplete').autocomplete({
+      lookup: all_words,
+      onHint: function (hint) {
+          $('#autocomplete-x').val(hint);
+      },
+    });
+  });
+
   $("#autocomplete").focus();
 
-  $('#autocomplete').autocomplete({
-    lookup: [],
-    onHint: function (hint) {
-        $('#autocomplete-x').val(hint);
-    },
-  });
 
   $("#word_search").submit(function(){
     $.post("/get_detail", $(this).serialize(), function(data){
@@ -45,7 +52,6 @@ $(document).ready(function(){
         $(".word-detail").hide();
         $("#alert_box").hide();
         $(".form-add").css("display", "inline-block");
-        // $("#alert_box").removeClass().addClass("alert alert-warning").html("Not found in diction. Please add!").css("display", "inline-block");
         $(".form-add .add-word").val(word_search);
         $(".form-add .add-translation").val("").focus();
       };
@@ -55,10 +61,14 @@ $(document).ready(function(){
 
   $("#word_add").submit(function(){
     $.post("/add", $(this).serialize(), function(data){
-      if( data == "true"){
+      if( data != null){
         $("#alert_box").removeClass().addClass("alert alert-success").html("Added successful!").css("display", "inline-block");
         $(".form-add").hide();
         $(".form-search .word").focus();
+        // after insert new data to database.
+        // Add data to json for  autocomplete search
+        all_words.push(data);
+
         get_new_word();
       }else{
         $("#alert_box").removeClass().addClass("alert alert-danger").html("Added failed!").css("display", "inline-block");

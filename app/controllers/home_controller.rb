@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   def create
     # function create_data return "true" or "false"
     created_data = Word.create_data(word_params)
-    return render text: created_data
+    return render json: created_data
   end
 
   def search
@@ -44,6 +44,10 @@ class HomeController < ApplicationController
     @total = @all_words.count
   end
 
+ def get_words
+  all_words =  Word.order("view_counter DESC").map{ |word| { "value" => word.word, "data" => word.translation } }
+  return render json: all_words
+ end
   private
 
   def word_params
