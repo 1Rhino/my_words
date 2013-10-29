@@ -4,7 +4,7 @@ namespace :import  do
   desc "Import words data to DB"
   task :words => :environment do
 
-    Word.connection.execute("UPDATE SQLITE_SEQUENCE SET seq = 1")
+    # Word.connection.execute("UPDATE SQLITE_SEQUENCE SET seq = 1")
 
     puts "Import words data"
     CSV.foreach(Rails.root.to_s+"/db/vocaburary.csv") do |row|
