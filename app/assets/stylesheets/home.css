@@ -109,6 +109,9 @@
   margin-top: 25px;
   text-align: center;
 }
+.all-words a{
+  margin-right: 10px;
+}
 .box-words{
   margin: 0 auto;
   padding: inherit;
