@@ -50,6 +50,10 @@ class HomeController < ApplicationController
     render 'all_words'
   end
 
+  def random_words
+    @list_words = Word.random_words
+  end
+
   def get_words
     all_words =  Word.order("view_counter DESC").map{ |word| { "value" => word.word, "data" => word.translation } }
     return render json: all_words

@@ -1,0 +1,8 @@
+div class="container"
+  div id="random_words_slide" class="carousel slide" data-ride="carousel"
+    div class="carousel-inner"
+      = render_slide_item(@list_words)
+    a class="left carousel-control" href="#random_words_slide" data-slide="prev"
+      span class="glyphicon glyphicon-chevron-left"
+    a class="right carousel-control" href="#random_words_slide" data-slide="next"
+      span class="glyphicon glyphicon-chevron-right"

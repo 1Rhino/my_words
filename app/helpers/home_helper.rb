@@ -8,4 +8,16 @@ module HomeHelper
   return string_words.html_safe
  end
 
+ def render_slide_item(list_words)
+  html_string = ""
+  list_words.each_with_index do |word, index|
+    active = index == 0 ? "active" : nil
+    html_string << "<div class='item #{active}'>"
+    html_string <<   "<span class='word'>#{word.word}</span>"
+    html_string <<   "<span class='translation'>#{word.translation}</span>"
+    html_string << "</div>"
+  end
+  return html_string.html_safe
+ end
+
 end

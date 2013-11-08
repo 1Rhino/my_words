@@ -118,9 +118,10 @@ $(document).ready(function(){
     })
     return false;
   })
-})
 
-// list functions
+  $('.carousel').carousel();
+
+})
 
 function get_new_word(){
   $.post("new_words", function(data){
