@@ -75,12 +75,12 @@
 }
 .words_list .word {
   vertical-align: middle;
-  width: 250px;
+  width: 230px;
   display: inline-block;
 }
 .words_list .translation {
   vertical-align: middle;
-  max-width: 275px;
+  max-width: 255px;
   display: inline-block;
 }
 .words_list > li {
