@@ -8,6 +8,8 @@ MyWords::Application.routes.draw do
   post "popular_words" => "home#popular_words"
   post "get_words" => "home#get_words"
   get "all_words" => "home#all_words"
+  get "like_words" => "home#like_words"
+  post "toogle_like" => "home#toogle_like"
 
   root "home#index"
   # The priority is based upon order of creation: first created -> highest priority.

@@ -7,6 +7,7 @@ div class="box-search"
     span class="word"
     span class="translation"
     a href="#" class="edit-word" Edit
+    a href="#" class="like-word"
     div class="form-update"
       form id="word_update" class="form-inline" role="form"
         div class="form-group"
@@ -22,6 +23,8 @@ div class="box-search"
         input type="text" class="form-control add-word" placeholder="Word..." name="word[word]"
       div class="form-group"
         input type="text" class="form-control add-translation" placeholder="Translate..." name="word[translation]"
+      div class="input-like-word"
+        input type="checkbox" class="add-like" name="word[like]" Like
       button type="submit" class="btn btn-primary" Add
 
   div id="alert_box"

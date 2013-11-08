@@ -6,19 +6,14 @@ div class="container"
     div class="label-list"
       span class="label label-primary" Popular words
     div class="popular_words words_list"
+      = render_words_list(@popular_words)
 
   div class="col-lg-6 box-words"
     div class="label-list"
       span class="label label-primary" Newest words
     div class="new_words words_list"
+      = render_words_list(@new_words)
 
   div style="clear:both;"
   div class="all-words"
     a class="btn btn-primary" href="/all_words" All words
-
-javascript:
-  $(document).ready(function(){
-    get_new_word();
-    get_popular_words();
-  });
-

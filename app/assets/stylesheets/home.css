@@ -1,15 +1,15 @@
 .top-logo {
   margin: 30px auto 0;
-  max-width: 500px;
+  max-width: 570px;
 }
 .top-logo img{
-  margin-left: 65px;
+  margin-left: 115px;
 }
 #word_search .word {
   height: 40px;
 }
 .form-search {
-  width: 500px;
+  width: 570px;
   margin-top: 30px;
 }
 .form-search button {
@@ -17,7 +17,7 @@
   width: 80px;
 }
 .form-add {
-  width: 500px;
+  width: 570px;
   margin-top: 5px;
   display: none;
 }
@@ -25,10 +25,13 @@
 .word-detail {
   margin-top: 5px;
   margin-bottom: 0px;
-  width:500px;
+  width:570px;
+}
+.word-detail .id-word {
+  display: none;
 }
 .alert{
-  width:500px;
+  width:570px;
 }
 #alert_box{
   margin-top: 5px;
@@ -43,25 +46,26 @@
 
 .word-detail .word {
   vertical-align: middle;
-  width: 45%;
+  width: 41%;
   display:inline-block;
 }
 
 .word-detail .translation {
   vertical-align: middle;
-  width: 45%;
+  width: 43%;
   display:inline-block;
 }
 .alert {
   display: none;
 }
 .form-update {
-  width: 500px;
+  width: 570px;
   margin-top: 3px;
   display: none;
 }
 .form-group{
   margin-right:3px;
+  width: 40%;
 }
 .box-words {
   margin-top: 40px;
@@ -86,7 +90,7 @@
 .box-search {
   margin: 0 auto;
   padding: inherit;
-  max-width: 500px;
+  max-width: 570px;
 }
 .label-list{
   margin-bottom:10px;
@@ -117,4 +121,11 @@
   background-color: #f5f5f5;
   text-align: right;
   padding: 25px;
+}
+.like-word {
+  float: right;
+}
+.input-like-word {
+  display: inline-block;
+  margin: 0 5px;
 }

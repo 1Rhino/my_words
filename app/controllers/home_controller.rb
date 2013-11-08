@@ -4,6 +4,8 @@ class HomeController < ApplicationController
   include HomeHelper
 
   def index
+    @new_words = Word.new_words(15) # maximum = 15 words
+    @popular_words = Word.popular_words(15) # maximum = 15 words
   end
 
   def create
@@ -38,16 +40,26 @@ class HomeController < ApplicationController
   end
 
   def all_words
-    sort_by = "id"
-    sort_by = 'view_counter' if !params['sort_by'].blank? && params['sort_by'] == 'popular'
-    @all_words = Word.order("#{sort_by} DESC").paginate(per_page: 30, page: params["page"])
-    @total = @all_words.count
+    @list_words = Word.all_words(params)
+    @total = @list_words.count
   end
 
- def get_words
-  all_words =  Word.order("view_counter DESC").map{ |word| { "value" => word.word, "data" => word.translation } }
-  return render json: all_words
- end
+  def like_words
+    @list_words = Word.like_words(params)
+    @total = @list_words.count
+    render 'all_words'
+  end
+
+  def get_words
+    all_words =  Word.order("view_counter DESC").map{ |word| { "value" => word.word, "data" => word.translation } }
+    return render json: all_words
+  end
+
+  def toogle_like
+    result = Word.toogle_like(params[:id])
+    return render text: result
+  end
+
   private
 
   def word_params

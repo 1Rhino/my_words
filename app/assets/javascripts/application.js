@@ -34,6 +34,9 @@ $(document).ready(function(){
 
 
   $("#word_search").submit(function(){
+    if($("#word_search .word").val() == ""){
+      return false
+    }
     $.post("/get_detail", $(this).serialize(), function(data){
       if(data != " "){
         $(".word-detail").css("display", "inline-block");
@@ -41,8 +44,11 @@ $(document).ready(function(){
         $("#alert_box").hide();
 
         $(".word-detail .word").html(data.value);
-        $(".word-detail .translation").html(data.data);
+        var like = data.like ? "Unlike" : "Like";
+        $(".word-detail .like-word").attr("value", data.id);
+        $(".word-detail .like-word").html(like);
 
+        $(".word-detail .translation").html(data.data);
         $(".form-update .update-word").val(data.value);
         $(".form-update .update-translation").val(data.data);
         $(".form-update .update-id").val(data.id);
@@ -94,6 +100,22 @@ $(document).ready(function(){
   $(".edit-word").click(function(){
     $(".form-update").toggle();
     $(".form-update .update-translation").focus();
+    return false;
+  })
+
+  // use delegate: hanlder element for now and future (added, created..)
+  $(document).delegate('.like-word', 'click', function() {
+    var id = $(this).attr("value");
+    // Don't use $(this) because we need select all words have the same value with this word
+    var like_word = $(".like-word[value='" + id + "']");
+    $.post("/toogle_like", {id: id}, function(data){
+      if(data == "true"){
+        data = like_word.html() == "Like" ? "Unlike" : "Like"
+        like_word.html(data);
+      }else{
+        alert("Sorry. Wrong now!");
+      }
+    })
     return false;
   })
 })

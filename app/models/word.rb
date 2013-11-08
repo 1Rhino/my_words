@@ -33,7 +33,7 @@ class Word < ActiveRecord::Base
         word.save
       rescue
       end
-      return { "value" => word.word, "data" => word.translation, "id" => word.id }
+      return { "value" => word.word, "data" => word.translation, "id" => word.id, "like" => word.like }
     end
   end
 
@@ -58,6 +58,29 @@ class Word < ActiveRecord::Base
 
   def self.popular_words(maximum_words)
     Word.order("view_counter desc, id desc").limit(maximum_words)
+  end
+
+  def self.like_words(params)
+    Word.where(like: true).order("view_counter desc, id desc").paginate(per_page: 30, page: params["page"])
+  end
+
+  def self.all_words(params)
+    sort_by = "id"
+    sort_by = 'view_counter' if !params['sort_by'].blank? && params['sort_by'] == 'popular'
+    Word.order("#{sort_by} DESC").paginate(per_page: 30, page: params["page"])
+  end
+
+  def self.toogle_like(id_word)
+    word = Word.where(id: id_word.to_i).first
+    return "false" if word.blank?
+
+    begin
+      word.like = !word.like
+      word.save
+      return 'true'
+    rescue
+      return 'false'
+    end
   end
 
 end

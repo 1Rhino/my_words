@@ -6,9 +6,6 @@ div class="container"
     div class="total-words"
       span class="label label-primary" = @total.to_s + " words"
     div class="words_list"
-      - @all_words.each do |word|
-        li
-          span class="word" = word.word
-          span class="translation" = word.translation
+      = render_words_list(@list_words)
 
-    = will_paginate @all_words
+    = will_paginate @list_words
