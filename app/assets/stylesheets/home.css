@@ -132,7 +132,58 @@
   display: inline-block;
   margin: 0 5px;
 }
-#random_words_slide{
-  width: 960px;
-  height: 300px;
+#random_words_slide {
+  height: 250px;
+  margin: 10px auto;
+  width: 100%;
+}
+.glyphicon-chevron-left:before {
+  content: "«";
+}
+.glyphicon-chevron-right:before {
+  content: "»";
+}
+.carousel-control.right {
+  background-image: none;
+  background-repeat: repeat-x;
+  right: 22px;
+}
+.carousel-control.left {
+  background-image: none;
+  background-repeat: repeat-x;
+}
+.carousel-control {
+  bottom: 0;
+  color: #000000;
+  font-size: 40px;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  top: 0;
+  width: 15px;
+}
+
+.glyphicon, .glyphicon-chevron-left, .glyphicon-chevron-right {
+  top: 41% !important;
+}
+.carousel {
+  border: 1px solid #DDDDDD;
+}
+.carousel-inner{
+  height: 250px;
+  text-align: center;
+}
+.carousel-inner > .item {
+  font-size: 35px;
+  padding-top: 95px;
+}
+.carousel-inner > .item .word{
+  margin-right: 50px;
+  color: #1A8CC9;
+}
+
+.carousel-inner > .item .translation{
+  display: none;
 }

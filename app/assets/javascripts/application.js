@@ -32,7 +32,6 @@ $(document).ready(function(){
 
   $("#autocomplete").focus();
 
-
   $("#word_search").submit(function(){
     if($("#word_search .word").val() == ""){
       return false
@@ -119,8 +118,17 @@ $(document).ready(function(){
     return false;
   })
 
-  $('.carousel').carousel();
+  // translate game words
+  $(".item .hint").click(function(){
+    $(this).hide();
+    $(this).parent().find(".translation").show();
+    return false;
+  })
 
+  $(".play-words").click(function(){
+    window.open("/random_words", "popupWindow", "width=600,height=270,menubar=no,resizable=no,location=no,toolbar=no");
+    return false;
+  })
 })
 
 function get_new_word(){

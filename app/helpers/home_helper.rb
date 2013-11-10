@@ -14,6 +14,7 @@ module HomeHelper
     active = index == 0 ? "active" : nil
     html_string << "<div class='item #{active}'>"
     html_string <<   "<span class='word'>#{word.word}</span>"
+    html_string <<   "<a class='btn btn-primary hint' href='#'>Translate</a>"
     html_string <<   "<span class='translation'>#{word.translation}</span>"
     html_string << "</div>"
   end

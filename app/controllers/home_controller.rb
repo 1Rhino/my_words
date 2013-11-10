@@ -52,6 +52,7 @@ class HomeController < ApplicationController
 
   def random_words
     @list_words = Word.random_words
+    render layout: 'random_words'
   end
 
   def get_words
