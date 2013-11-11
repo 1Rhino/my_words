@@ -11,3 +11,8 @@ javascript:
   $('.carousel').carousel({
     interval: 3000
   })
+  $('.carousel').on('slide.bs.carousel', function(){
+    $('.item .translation').hide();
+    $('.item .hint').show();
+  })
+

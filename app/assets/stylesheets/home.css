@@ -177,10 +177,9 @@
 }
 .carousel-inner > .item {
   font-size: 35px;
-  padding-top: 95px;
+  padding-top: 65px;
 }
 .carousel-inner > .item .word{
-  margin-right: 50px;
   color: #1A8CC9;
 }
 

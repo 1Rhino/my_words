@@ -126,7 +126,7 @@ $(document).ready(function(){
   })
 
   $(".play-words").click(function(){
-    window.open("/random_words", "popupWindow", "width=600,height=270,menubar=no,resizable=no,location=no,toolbar=no");
+    window.open("/random_words", "popupWindow", "width=760,height=270,menubar=no,resizable=no,location=no,toolbar=no");
     return false;
   })
 })

@@ -13,9 +13,9 @@ module HomeHelper
   list_words.each_with_index do |word, index|
     active = index == 0 ? "active" : nil
     html_string << "<div class='item #{active}'>"
-    html_string <<   "<span class='word'>#{word.word}</span>"
-    html_string <<   "<a class='btn btn-primary hint' href='#'>Translate</a>"
-    html_string <<   "<span class='translation'>#{word.translation}</span>"
+    html_string <<   "<div class='word'>#{word.word}</div>"
+    html_string <<   "<div class='btn btn-primary hint'>Translate</div>"
+    html_string <<   "<div class='translation'>#{word.translation}</div>"
     html_string << "</div>"
   end
   return html_string.html_safe
