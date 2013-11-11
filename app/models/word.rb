@@ -84,6 +84,6 @@ class Word < ActiveRecord::Base
   end
 
   def self.random_words
-    Word.where(like: true).order("random()").limit(20)
+    Word.where(like: true).order("random()").limit(7)
   end
 end
