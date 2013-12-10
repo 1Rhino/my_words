@@ -5,11 +5,10 @@ namespace :export_json  do
 
     all_words = Word.all.to_json
     puts "export to db/"
-    puts all_words
-    File.open(Rails.root.to_s + "/db/all_words.json", 'w') {|f| f.write(all_words) }
-    puts "export to public/"
+    # File.open(Rails.root.to_s + "/db/all_words.json", 'w') {|f| f.write(all_words) }
+    # puts "export to public/"
     File.open(Rails.root.to_s + "/public/all_words.json", 'w') {|f| f.write(all_words) }
-    puts "db/all_words: " + File.exist?(Rails.root.to_s + "/db/all_words.json").to_s
+    # puts "db/all_words: " + File.exist?(Rails.root.to_s + "/db/all_words.json").to_s
     puts "public/all_words: " + File.exist?(Rails.root.to_s + "/public/all_words.json").to_s
 
   end
