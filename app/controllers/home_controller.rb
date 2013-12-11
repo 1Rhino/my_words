@@ -65,6 +65,10 @@ class HomeController < ApplicationController
     return render text: result
   end
 
+  def get_all_data_json
+    return render json: Word.all.to_json
+  end
+
   private
 
   def word_params

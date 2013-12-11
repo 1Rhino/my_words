@@ -11,6 +11,7 @@ MyWords::Application.routes.draw do
   get "like_words" => "home#like_words"
   post "toogle_like" => "home#toogle_like"
   get "random_words" => "home#random_words"
+  get "all_data.json" => "home#get_all_data_json"
 
   root "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
